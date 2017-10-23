@@ -216,11 +216,11 @@
 					Mask.style.display = 'block';
 					//获取标签的value值
 					var Thismsg = this.attributes;
-					console.log(Thismsg)
+					//console.log(Thismsg)
 					for(var j = 0 ; j <Thismsg.length ; j ++){
 						if(Thismsg[j].nodeName.indexOf('value')>=0){
 							list = oLi[this.index].getAttribute(Thismsg[j].nodeName);
-							console.log(list)
+							//console.log(list)
 							Windowtext.innerHTML += '<p onclick ="Send(this.innerHTML)">'+list+'</p>';
 						}
 					}
