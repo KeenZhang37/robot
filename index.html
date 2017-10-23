@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body>
+		<!--遮罩层-->
+		<div class="mask">
+			<div class="window">
+				<!--关闭按钮-->
+				<span class="close"></span>
+				<h4><p class="title">你可以这样问我</p></h4>
+				<div class="text"></div>
+			</div>
+		</div>
+
+		<div class="chat">
+			<!--左-->
+			<div class="fl">
+				<div class="top">
+					<!--头像-->
+					<span></span>
+					<p>图图</p>
+				</div>
+				<div class="btm">
+					<p>喜欢的事</p>
+					<div class="like">
+						<span class="one">爱聊天</span>
+						<span class="two">见义勇为</span>
+						<span class="three">工作狂</span>
+						<span class="four">唱歌</span>
+					</div>
+					<p>讨厌的事</p>
+					<div class="hate">
+						<span class="one">被冤枉</span>
+						<span class="two">无所事事</span>
+						<span class="three">没钱花</span>
+						<span class="four">吵架</span>
+					</div>
+				</div>
+			</div>
+			<!--聊天窗-->
+			<div class="center">
+				<!--聊天记录窗口-->
+				<div class="top">
+					<div class="chatting">
+						<div class="rot">
+							<span></span>
+							<p>
+								“嗨，最近想我没有？[羞涩]”
+								<i></i>
+							</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="btm">
+					<!--输入聊天信息-->
+					<input type="text" id="" value="" class="txt" onkeypress="showHint(this.value)" />
+					<input type="button" id="" value="发送" class="btn" />
+					<div class="share">
+						<span class="">分享</span>
+						<a class="weixin"></a>
+						<a class="weibo"></a>
+						<a class="qq"></a>
+						<span class="connect">接入图灵机器人</span>
+					</div>
+				</div>
+			</div>
+			<!--右边快捷推荐-->
+			<div class="fr">
+				<div class="top">
+					<ul>
+						<li value1="你好，你是美女么？" value2="挖掘机技术哪家强？">
+							<span class="one"></span>
+							<p>聊天</p>
+						</li>
+						<li value1="讲个笑话" value2="冷笑话">
+							<span class="two"></span>
+							<p>笑话</p>
+						</li>
+						<li value1="刘亦菲的图片">
+							<span class="three"></span>
+							<p>图片</p>
+						</li>
+
+						<li value1="北京今天的天气" value2="北京今天的天气质量">
+							<span class="four"></span>
+							<p>天气</p>
+						</li>
+						<li value1="地球到月球的距离" value2="感冒应该怎么办" value3="虎皮鹦鹉吃什么">
+							<span class="five"></span>
+							<p>问答</p>
+						</li>
+						<li value1="百科周杰伦" value2="李连杰的介绍">
+							<span class="six"></span>
+							<p>百科</p>
+						</li>
+						<li value1="讲个故事" value2="讲个白雪公主的故事">
+							<span class="seven"></span>
+							<p>故事</p>
+						</li>
+						<li value1="我要看新闻" value2="体育新闻" value3="周杰伦的新闻">
+							<span class="eight"></span>
+							<p>新闻</p>
+						</li>
+
+						<li value1="红烧肉怎么做" value2="辣子鸡丁的菜谱">
+							<span class="nine"></span>
+							<p>菜谱</p>
+						</li>
+
+						<li value1="天蝎座明天的运势" value2="现在是什么星座" value3="今年属牛的运势">
+							<span class="ten"></span>
+							<p>星座</p>
+						</li>
+
+						<li value1="周杰伦这个名字好不好" value2="10086凶吉">
+							<span class="eleven"></span>
+							<p>凶吉</p>
+						</li>
+
+						<li value1="3乘以5等于多少" value2="25*25等多少">
+							<span class="twelve"></span>
+							<p>计算</p>
+						</li>
+
+						<li value1="顺丰快递">
+							<span class="thirteen"></span>
+							<p>快递</p>
+						</li>
+						<li value1="明天从北京到上海的航班">
+							<span class="fourteen"></span>
+							<p>飞机</p>
+						</li>
+						<li value1="明天从北京到石家庄的火车">
+							<span class="fifteen"></span>
+							<p>列车</p>
+						</li>
+
+						<li value1="开始成语接龙">
+							<span class="sixteen"></span>
+							<p>成语接龙</p>
+						</li>
+
+					</ul>
+				</div>
+				<div class="more">
+					<a>了解更多</a>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//点击发送
+			//输入框
+			var myword = document.querySelector('.center .txt');
+			//发送按钮
+			var oSend = document.querySelector('.center .btn');
+
+			oSend.onclick = function() {
+					myword = document.querySelector('.center .txt');
+					Send(myword.value);
+				}
+				//点击回车
+			function showHint(str) {
+				if(event.keyCode == 13) {
+					Send(str);
+				}
+			}
+			function Send(str) {
+				console.log(this.innerHTML+'2345346')
+				//创建对象
+				var xhr;
+				if(window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest();
+				} else {
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				//创建请求
+				var url = 'http://www.tuling123.com/openapi/api?key=58293807907748a5b4bda52e058943b2';
+				url = url + '&info=' +str;
+				url = url + '&useid=123345';
+				xhr.open('post', url, true);
+				//发送请求
+				xhr.send();
+				//感知状态 接收服务器的响应
+				xhr.onreadystatechange = function() {
+					if(xhr.readyState == 4 && xhr.status == 200) {
+						var rotWord = xhr.responseText;
+						//JSON字符串转数组
+						var Rword = JSON.parse(xhr.responseText);
+						//console.log(Rword.text);
+						document.querySelector('.chatting').innerHTML += '<div class="me"><span></span><p>' + str + '<i></i></p><div class="clear"></div></div>';
+						document.querySelector('.chatting').innerHTML += '<div class="rot"><span></span><p>' + Rword.text + '<i></i></p><div class="clear"></div></div>';
+						myword.value = '';
+						Mask.style.display = 'none';
+					}
+				}
+				
+			}
+
+			//点击右侧图标事件
+			var oLi = document.querySelectorAll('.fr li');
+			var Mask = document.querySelector('.mask');
+			var Windowtext = document.querySelector('.window .text');
+			var list = '';
+			var values = ''
+			for(var i = 0; i < oLi.length; i++) {
+				oLi[i].index = i;
+				oLi[i].onclick = function() {
+					Windowtext.innerHTML = '';
+					Mask.style.display = 'block';
+					//获取标签的value值
+					var Thismsg = this.attributes;
+					console.log(Thismsg)
+					for(var j = 0 ; j <Thismsg.length ; j ++){
+						if(Thismsg[j].nodeName.indexOf('value')>=0){
+							list = oLi[this.index].getAttribute(Thismsg[j].nodeName);
+							console.log(list)
+							Windowtext.innerHTML += '<p onclick ="Send(this.innerHTML)">'+list+'</p>';
+						}
+					}
+				}
+			}
+			//关闭窗口
+			var Close = document.querySelector('.window .close');
+			Close.onclick = function() {
+				Mask.style.display = 'none';
+				Windowtext.innerHTML = '';
+			}
+		</script>
+	</body>
+
+</html>

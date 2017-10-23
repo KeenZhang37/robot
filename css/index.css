@@ -1,0 +1,429 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul,ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+em,i {
+	font: normal;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+html,body {
+	width: 100%;
+	height: 100%;
+}
+/*遮罩层*/
+.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 10;
+	display: none;
+}
+/*弹窗1*/
+.window {
+	width: 360px;
+	height: auto;
+	background: white;
+	position: absolute;
+	left: 50%;
+	margin-left: -180px;
+	margin-top: 220px;
+	border-radius: 4px;
+	padding-bottom: 14px;
+	box-sizing: border-box;
+}
+/*关闭窗口*/
+.window .close {
+	width: 18px;
+	height: 18px;
+	background: url(../img/share.png) 0 0 no-repeat;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	transition: all .5s;
+}
+.window .close:hover {
+	transform: rotate(180deg);
+}
+.window .title {
+	width: 360px;
+	height: 40px;
+	line-height: 40px;
+	background: #00a3f0;
+	margin-top: 0;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 4px 4px 0 0;
+	cursor: default;
+}
+.window p {
+	margin-top: 14px;
+	line-height: 14px;
+	font-size: 12px;
+	color: #2373be;
+	text-align: center;
+	cursor: pointer;
+}
+
+
+
+.chat {
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	margin-top: 200px;
+	position: relative;
+	box-sizing: border-box;
+}
+.chat .fl,.chat .fr {
+	width: 200px;
+	height: 100%;
+	border: 1px solid #dbdada;
+	box-shadow: 0 0 5px 0 #dbdada;
+	position: relative;
+}
+.chat .center {
+	position: relative;
+	width: 560px;
+	height: 100%;
+	border: 1px solid #dbdada;
+	box-shadow: 0 0 5px 0 #dbdada;
+	float: left;
+	margin-left: 17px;
+}
+/*左边*/
+/*左上*/
+.chat .fl .top {
+	height: 160px;
+	padding-top: 40px;
+	background: #00a3f0;
+}
+.chat .fl .top span {
+	display: block;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin: 0 auto;
+	/*background: white;*/
+	background: url(../img/tx.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.chat .fl .top p {
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+}
+/*左下*/
+.chat .fl .btm {
+	padding-left: 30px;
+}
+.chat .fl .btm p {
+	display: block;
+	margin: 10px 0 15px 0;
+	font-size: 14px;
+}
+.chat .fl .btm span {
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+.chat .fl .btm .one {
+	color: #3cb1e7;
+	border: 1px solid #3cb1e7;
+}
+.chat .fl .btm .two {
+	color: #ff9c01;
+    border: #ff9c01 solid 1px;
+}
+.chat .fl .btm .three {
+	color: #094;
+    border: #094 solid 1px;
+}
+.chat .fl .btm .four {
+	color: #6e61a9;
+    border: #6e61a9 solid 1px;
+}
+
+/*中间*/
+/*聊天记录窗口*/
+.center .top {
+	width: 100%;
+	height: 400px;
+	padding-top: 40px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+	border-bottom: 1px solid #dbdada;
+}
+.center .chatting {
+	width: 100%;
+	height: auto;
+}
+/*机器人发的消息*/
+.center .rot {
+	display: block;
+	margin-bottom: 20px;
+}
+/*机器人头像*/
+.center .rot span {
+	display: block;
+	width: 43px;
+	height: 43px;
+	background: url(../img/share.png) 0 -666px no-repeat;
+	float: left;
+	margin-left: 28px;
+}
+/*发送内容*/
+.center .rot p {
+    position: relative;
+    float: left;
+	margin-left: 14px;
+    color: #333;
+    font-size: 14px;
+    padding: 6px 18px;
+    line-height: 24px;
+    background: #f1f1f1;
+    border-radius: 6px;
+    max-width: 220px;
+}
+/*小三角*/
+.center .rot i{
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 6px solid white;
+    border-bottom: 6px solid white;
+    border-right: 6px solid #f1f1f1;
+    left: -6px;
+    top: 12px;
+}
+/*我发的消息*/
+.center .me {
+	display: block;
+	margin-bottom: 10px;
+}
+/*我的头像*/
+.center .me span {
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(../img/share.png) 0 -626px no-repeat;
+	float: right;
+	margin-right: 28px;
+}
+/*发送内容*/
+.center .me p {
+    position: relative;
+    float: right;
+	margin-right: 14px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 18px;
+    line-height: 24px;
+    background: #19b955;
+    border-radius: 6px;
+    max-width: 220px;
+}
+/*小三角*/
+.center .me i{
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 6px solid white;
+    border-bottom: 6px solid white;
+    border-left: 6px solid #19b955;
+    right: -6px;
+    top: 12px;
+}
+
+
+
+
+
+.center .btm {
+	width: 100%;
+	height: 100px;
+}
+/*输入框*/
+.center .txt {
+	width: 410px;
+	height: 38px;
+	line-height: 38px;
+	margin-top: 20px;
+	margin-left: 14px;
+	margin-right: 8px;
+	padding-left: 14px;
+	border: #d0cfcf solid 1px;
+	box-shadow: 1px 1px 2px 0 #d0cfcf;
+	border-radius: 5px;
+}
+.center .btn {
+	width: 90px;
+	height: 40px;
+	line-height: 40px;
+	background: #00a3f0;
+	color: white;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+}
+.center .share {
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	margin-top: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.center .share a {
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	border-radius: 50%;
+	margin-left: 8px;
+}
+.center .share span {
+	float: left;
+}
+.center .share .connect {
+	float: right;
+	color: #2373be;
+}
+.center .share .connect:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/*微信*/
+.center .share .weixin {
+	background: url(../img/share.png);
+	background-position: -1px -19px;
+}
+.center .share .weixin:hover {
+	background-position: -1px -43px;
+}
+.center .share .weibo {
+	background: url(../img/share.png);
+	background-position: -1px -91px;
+}
+.center .share .weibo:hover {
+	background-position: -1px -139px;
+}
+.center .share .qq {
+	background: url(../img/share.png);
+	background-position: -2px -66px;
+}
+.center .share .qq:hover {
+	background-position: -2px -114px;
+}
+
+
+/*右边*/
+.fr .top {
+	height: 424px;
+	width: 100%;
+	border-bottom: 1px solid #dbdada;
+}
+.fr .more {
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+.fr .more a {
+	font-size: 12px;
+	color: #2373be;
+}
+.fr ul {
+	margin-top: 30px;
+	padding-left: 16px;
+	
+}
+.fr li {
+	width: 54px;
+	display: inline-block;
+	float: left;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 12px;
+	color: #30303f;
+	cursor: pointer;
+}
+.fr li span {
+	width: 29px;
+	height: 29px;
+	display: block;
+	margin: 5px auto;
+	background: url(../img/share.png);
+	background-position: 0px -423px;
+}
+.fr li .one {
+	background-position: 0px -423px;
+}
+.fr li .two {
+	background-position: 0px -452px;
+}
+.fr li .three {
+	background-position: 0px -365px;
+}
+.fr li .four {
+	background-position: 0px -394px;
+}
+.fr li .five {
+	background-position: 0px -481px;
+}
+.fr li .six {
+	background-position: 0px -597px;
+}
+.fr li .seven {
+	background-position: 0px -568px;
+}
+.fr li .eight {
+	background-position: 0px -510px;
+}
+.fr li .nine{
+	background-position: 0px -539px;
+}
+.fr li .ten {
+	background-position: 0px -336px;
+}
+.fr li .eleven {
+	background-position: 0px -220px;
+}
+.fr li .twelve {
+	background-position: 0px -191px;
+}
+.fr li .thirteen{
+	background-position: 0px -162px;
+}
+.fr li .fourteen {
+	background-position: 0px -307px;
+}
+.fr li .fifteen {
+	background-position: 0px -278px;
+}
+.fr li .sixteen {
+	background-position: 0px -249px;
+}
+.fr .more a:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
